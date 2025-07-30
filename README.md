@@ -1,4 +1,8 @@
 
+<!---------------------------------------------------------------------------------------HEADER--------------------------------------------------------------------------------------->
+
+
+
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&height=90&color=53a0e0">
 </div>
@@ -17,7 +21,13 @@
    </a>
 </div>
 
-<h2 align="center">📘 A história de C:</h2>
+
+
+<!---------------------------------------------------------------------------------------PART1--------------------------------------------------------------------------------------->
+
+
+
+<h2 align="center">📘 A HISTÓRIA DE C:</h2>
 
 A linguagem C evoluiu a partir das linguagens **BCPL** e **B**.
 **BCPL**, criada em **1967 por Martin Richards**, foi projetada para desenvolver sistemas operacionais e compiladores.
@@ -49,6 +59,14 @@ Como veremos mais adiante, C possui diversas **bibliotecas padrão** com **funç
 
 > [!TIP]
 > Usar funções da biblioteca-padrão de C em vez de escrever suas próprias versões equivalentes pode melhorar o desempenho do programa, porque essas funções foram cuidadosamente escritas para serem executadas de modo eficaz.
+
+
+
+<!---------------------------------------------------------------------------------------PART2--------------------------------------------------------------------------------------->
+
+
+
+<h2 align="center">💾 INTRODUÇÃO À PROGRAMAÇÃO EM C</h2>
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&height=90&color=53a0e0&section=footer">
