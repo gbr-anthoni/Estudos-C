@@ -15,13 +15,6 @@
    <img src="https://capsule-render.vercel.app/api?type=cylinder&height=35&color=387db8&text=Linguagem%20C&fontSize=25&fontColor=FFFFFF&fontAlignY=53">
 </div>
 
-<div align="center">
-   <a href="https://github.com/gbr-anthoni">
-      <img src="https://img.shields.io/badge/Gabriel%20Anthoni-black?style=for-the-badge&logo=github">
-   </a>
-</div>
-
-
 
 <!---------------------------------------------------------------------------------------PART1--------------------------------------------------------------------------------------->
 
@@ -67,6 +60,8 @@ Como veremos mais adiante, C possui diversas **bibliotecas padrão** com **funç
 
 
 <h2 align="center">💾 INTRODUÇÃO À PROGRAMAÇÃO EM C</h2>
+
+A linguagem C permite uma **programação estruturada e organizada**. Neste capítulo, serão apresentados exemplos que ilustram suas principais **características**, acompanhados de análises para facilitar o entendimento.
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&height=90&color=53a0e0&section=footer">
