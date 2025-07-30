@@ -2,6 +2,10 @@
 <!---------------------------------------------------------------------------------------HEADER--------------------------------------------------------------------------------------->
 
 
+<p align="center">
+   <img src="https://devicons.railway.com/i/c.svg" width="100">
+</p>
+
 <div align="center">
    <img src="https://capsule-render.vercel.app/api?type=cylinder&height=35&color=387db8&text=Linguagem%20C&fontSize=25&fontColor=FFFFFF&fontAlignY=53">
 </div>
@@ -13,9 +17,6 @@ int main() {
    return 0;
 }
 ```
-<p align="center">
-   <img src="https://devicons.railway.com/i/c.svg" width="100">
-</p>
 
 <!---------------------------------------------------------------------------------------PART1--------------------------------------------------------------------------------------->
 
