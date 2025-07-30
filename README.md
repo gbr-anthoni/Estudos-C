@@ -17,7 +17,7 @@
    </a>
 </div>
 
-<h2 align="center"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=25&pause=1000&color=ffffff&center=true&vCenter=true&repeat=false&random=true&width=435&lines=%F0%9F%93%98+A+hist%C3%B3ria+de+C%3A" alt="Typing SVG" /></h2>
+<h2 align="center">📘 A história de C:</h2>
 
 A linguagem C evoluiu a partir das linguagens **BCPL** e **B**.
 **BCPL**, criada em **1967 por Martin Richards**, foi projetada para desenvolver sistemas operacionais e compiladores.
@@ -46,6 +46,9 @@ O resultado foi a aprovação do primeiro padrão oficial da linguagem em **1989
 <h3 align="center">Bibliotecas C</h3>
 
 Como veremos mais adiante, C possui diversas **bibliotecas padrão** com **funções muito úteis**. Ao aprender a programar em C, é possível dividir o processo em **duas fases**. A primeira consiste em **dominar a linguagem C em si** — sua sintaxe, tipos de dados, estruturas de controle, operadores e funções. A segunda fase envolve **aprender a utilizar a biblioteca padrão da linguagem**, que oferece um conjunto essencial de funções prontas realizar certas tarefas.
+
+> [!TIP]
+> Usar funções da biblioteca-padrão de C em vez de escrever suas próprias versões equivalentes pode melhorar o desempenho do programa, porque essas funções foram cuidadosamente escritas para serem executadas de modo eficaz.
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&height=90&color=53a0e0&section=footer">
