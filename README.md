@@ -15,6 +15,14 @@
    <img src="https://capsule-render.vercel.app/api?type=cylinder&height=35&color=387db8&text=Linguagem%20C&fontSize=25&fontColor=FFFFFF&fontAlignY=53">
 </div>
 
+```c
+#include <stdio.h>
+int main( void ) {
+   printf("Hello, World!\n");
+   return 0;
+}
+```
+
 
 <!---------------------------------------------------------------------------------------PART1--------------------------------------------------------------------------------------->
 
