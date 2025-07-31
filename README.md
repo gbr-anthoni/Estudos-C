@@ -70,3 +70,51 @@ em si** — sua sintaxe, tipos de dados, estruturas de controle, operadores e fu
 
 A linguagem C permite uma **programação estruturada e organizada**. Neste capítulo, serão apresentados exemplos
 que ilustram suas principais **características**, acompanhados de análises para facilitar o entendimento.
+
+<h3 align="center">Estrutura básica C:</h3>
+
+**`Hello, World!` em C:**
+```c
+#include <stdio.h>
+int main() {
+   printf("Hello, World!\n");
+   return 0;
+}
+```
+Estrutura básica para imprimir a mensagem: `Hello, World!` na tela.
+
+**passo a passo:**
+
+```c
+#include <stdio.h>
+```
+- Linhas que começam com `#` são chamadas de **diretivas** do pré-processador. Elas são processadas antes da compilação do programa.
+- A diretiva `#include <stdio.h>` instrui o pré-processador a incluir o **conteúdo do cabeçalho de entrada/saída padrão** no programa. Esse cabeçalho contém informações necessárias para o uso de **funções** como `printf()` e `scanf()` da biblioteca padrão.
+
+```c
+int main() { ... }
+```
+- `main` é uma **função**, ou seja, um **bloco de construção** de programa.
+  - Todo programa em C começa sua **execução pela função** `main`.
+- A **palavra-chave** `int` à esquerda de `main` indica que essa função retorna um **valor inteiro**.
+- As chaves `{ ... }` delimitam o **corpo da função:**
+  - `{` marca o início do bloco de código.
+  - `}` indica o fim do bloco.
+
+
+```c
+printf("Hello, World!\n");
+```
+- A função `printf()` instrui o computador a **imprimir uma mensagem na tela.**
+- A linha completa — `printf("Hello, World!\n");` — é chamada de uma **instrução** (*ou comando*0).
+- Toda instrução em C deve terminar com um ponto e vírgula `;`, que é chamado de **terminador de instrução**.
+
+A barra invertida `\` é chamada de **caractere de escape**. Ela indica que a função printf deve executar uma **ação especial**, diferente de imprimir um caractere comum.
+Quando o compilador encontra uma barra invertida dentro de uma string, ele combina ela com o **próximo caractere** para formar uma sequência de escape.
+Por exemplo, a sequência `\n` representa uma **nova linha (*newline*)**, ou seja, faz o cursor pular para o início da linha seguinte na saída.
+
+```c
+return 0;
+```
+- A instrução `return` em C é usada para encerrar a execução de uma função e retornar um valor para o ponto onde a função foi chamada.
+- No caso da função `main`, o comando `return 0;` indica que o programa terminou com sucesso.
