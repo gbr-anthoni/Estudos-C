@@ -56,6 +56,13 @@ programar em C, é possível dividir o processo em **duas fases**. A primeira co
 em si** — sua sintaxe, tipos de dados, estruturas de controle, operadores e funções. A segunda fase envolve 
 **aprender a utilizar a biblioteca padrão da linguagem**, que oferece um conjunto essencial de funções prontas realizar certas tarefas.
 
+**Algumas bibliotecas em C:**
+
+| Biblioteca   | Descrição                                                    |
+| ------------ | -------------------------------------------------------------|
+| `stdio.h`    | **Entrada e saída** (*ex: `printf()`, `scanf()`, `fgets()`*) |
+| `math.h`     | **Funções matemáticas** (*ex: `sqrt()`, `pow()`, `sin()`*)   |
+
 > [!TIP]
 > Usar funções da biblioteca-padrão de C em vez de escrever suas próprias versões equivalentes pode melhorar
 >  o desempenho do programa, porque essas funções foram cuidadosamente escritas para serem executadas de modo eficaz.
@@ -89,7 +96,7 @@ Estrutura básica para imprimir a mensagem: `Hello, World!` na tela.
 #include <stdio.h>
 ```
 - Linhas que começam com `#` são chamadas de **diretivas** do pré-processador. Elas são processadas antes da compilação do programa.
-- A diretiva `#include <stdio.h>` instrui o pré-processador a incluir o **conteúdo do cabeçalho de entrada/saída padrão** no programa. Esse cabeçalho contém informações necessárias para o uso de **funções** como `printf()` e `scanf()` da biblioteca padrão.
+- A diretiva `#include <stdio.h>` instrui o pré-processador a incluir o **conteúdo do cabeçalho/biblioteca de entrada e saída padrão** no programa. Esse cabeçalho contém informações necessárias para o uso de **funções** como `printf()` e `scanf()` da biblioteca padrão.
 
 ```c
 int main(void) { ... }
@@ -231,7 +238,7 @@ int conta2 = ( 5 + 2 ) * 3; // 21
 
 **operadores de atribuição:**
 
-Esses operadores são atalhos para fazer uma operação aritmética e já armazenar o resultado na própria variável.
+Esses operadores são atalhos para fazer uma operação aritmética e já **armazenar o resultado na própria variável**.
 
 ```c
 int a = 5;
@@ -249,4 +256,153 @@ a += 5; // 10
 | `/=`     | Divide e atribui                  | `a /= 2;`              |  
 | `%=`     | Módulo (resto) e atribui          | `a %= 3;`              | 
 
+**Operadores de incremento e decremento:**
+
+Estes operadores são usados para **aumentar** `++` ou **diminuir** `--` o valor de uma variável em 1 — de forma simples e rápida.
+
+```c
+int numero = 3;
+++numero // 4
+```
+
+**Tabela operadores de incremento e decremento:**
+
+| Operador | Expressão | Descrição                                       |
+| -------- | --------- | ----------------------------------------------- |
+| `++`     | `i++`     | Incrementa `i` em 1, e então usa o novo valor   |
+| `++`     | `++i`     | Usa o valor de `i`, e então incrementa `i` em 1 |
+| `--`     | `i--`     | Decrementa `i` em 1, e então usa o novo valor   |
+| `--`     | `--i`     | Usa o valor de `i`, e então decrementa `i` em 1 |
+
+**Biblioteca `math.h`:**
+
+A biblioteca `math.h` é usada para realizar **operações matemáticas avançadas** em C.
+
+```c
+int conta = pow(5, 3); // 125
+```
+- `pow(5, 3)` é o mesmo que: `5³`
+
+**Principais funções de `math.h`:**
+
+| Função       | Descrição                | Exemplo          | Resultado   |
+| ------------ | ------------------------ | ---------------- | ----------- |
+| `sqrt(x)`    | Raiz quadrada            | `sqrt(25)`       | `5.0`       |
+| `pow(x,y)`   | Potência (x elevado a y) | `pow(2,3)`       | `8.0`       |
+| `fmod(x, y)` | Resto da divisão (float) | `fmod(7.3, 2.0)` | `1.3`       |
+| `ceil(x)`    | Arredonda para cima      | `ceil(2.3)`      | `3.0`       |
+| `floor(x)`   | Arredonda para baixo     | `floor(2.9)`     | `3.0`       |
+
+<h3 align="center">Operações e estruturas condicionais em C</h3>
+
+**Operações condicionais em C**, que são usadas para tomar decisões no código, dependendo de uma condição ser **verdadeira** ou **falsa**.
+
+**Operadores relacionais e de igualdade:**
+
+Estes operadores são usados para **comparar valores** em C e retornam um resultado:
+
+```c
+int condicao2 = 5 != 5; // 0
+int condicao1 = 5 == 5; // 1
+```
+
+`0` - para falso.
+
+`1` - para verdadeiro.
+
+**Tabela de operadores relacionais e de igualdade:**
+
+| Operadores de igualdade    | Significado      | Exemplo  | Resultado se                  |
+| -------------------------- | ---------------- | -------- | ----------------------------- |
+| `==`                       | Igual a          | `5 == 7` | `0` (*falso*)                 |
+| `!=`                       | Diferente de     | `5 != 5` | `1` (*verdadeiro*)            |
+| **Operadores relacionais** |                  |          |                               |
+| `>`                        | Maior que        | `7 > 5`  | `1`                           |
+| `<`                        | Menor que        | `7 < 5`  | `0`                           |
+| `>=`                       | Maior ou igual a | `5 >= 5` | `1`                           |
+| `<=`                       | Menor ou igual a | `7 <= 5` | `0`                           |
+
+**Operadores lógicos:**
+
+Operadores lógicos permitem combinar ou inverter condições.
+
+```c
+int condicao1 = (5 == 5 && 5 > 5); // 0
+int condicao2 = (5 == 5 || 5 > 5); // 1
+```
+
+**Tabelas de operadores lógicos:**
+
+<table>
+   <tr>
+      <th>Operador</th>
+      <th>Descrição</th>
+      <th>Lógica</th>
+   </tr>
+   <tr>
+      <td><code>&&</code> <i>And/E</i></td>
+      <td>Analisa se <strong>ambas as condições são verdadeiras.</strong></td>
+      <td>
+         <table>
+            <tr><th>A</th><th>B</th><th>R</th></tr>
+            <tr><td>1</td><td>1</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>0</td><td>0</td></tr>
+         </table>
+      </td>
+   </tr>
+   <tr>
+      <td><code>||</code> <i>Or/Ou</i></td>
+      <td>Analisa se <strong>uma as condições é verdadeira.</strong></td>
+      <td>
+         <table>
+            <tr><th>A</th><th>B</th><th>R</th></tr>
+            <tr><td>1</td><td>1</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>0</td><td>0</td><td>0</td></tr>
+         </table>
+      </td>
+   </tr>
+   <tr>
+      <td><code>!</code> <i>Not/Não</i></td>
+      <td>Analisa se <strong>a condição é falsa.</strong></td>
+      <td>
+         <table align="center">
+            <tr><th>A</th><th>R</th></tr>
+            <tr><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td></tr>
+         </table>
+      </td>
+   </tr>
+   
+</table>
+
+**Estruturas condicionais em C:**
+
+São comandos que permitem ao programa verificar se uma condição é **verdadeira** ou **falsa** e, com base nisso, **executar diferentes instruções**.
+
+**Exemplo simples:**
+
+```c
+if ( condição ) {
+   // bloco de execução
+} else if ( outra condição ) {
+   // bloco de execução
+} else {
+   // bloco de execução
+}
+```
+
+- `if` – condição primária que é executada se for **verdadeira**.
+- `else if` – condições alternativas, avaliadas se o `if` for **falso**.
+- `else` – executado caso nenhuma das condições anteriores seja **verdadeira**.
+
+<h3 align="center">Estruturas de repetição em C</h3>
+
+As **estruturas de repetição** em C são usadas quando você precisa executar um **bloco de código várias vezes**, de forma **controlada** ou até que uma **condição seja satisfeita**.
+
+repetição controlada
+por contador
 
