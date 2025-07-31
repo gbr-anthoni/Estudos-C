@@ -22,7 +22,7 @@ int main() {
 
 
 
-<h2 align="center">📘 A HISTÓRIA DE C:</h2>
+<h2 align="center">📘 A HISTÓRIA DE C</h2>
 
 A linguagem C evoluiu a partir das linguagens **BCPL** e **B**.**BCPL**, criada em **1967 por Martin Richards**,
 foi projetada para desenvolver sistemas operacionais e compiladores.A linguagem B, desenvolvida por **Ken Thompson
@@ -71,7 +71,7 @@ em si** — sua sintaxe, tipos de dados, estruturas de controle, operadores e fu
 A linguagem C permite uma **programação estruturada e organizada**. Neste capítulo, serão apresentados exemplos
 que ilustram suas principais **características**, acompanhados de análises para facilitar o entendimento.
 
-<h3 align="center">Estrutura básica C:</h3>
+<h3 align="center">Estrutura básica C</h3>
 
 **`Hello, World!` em C:**
 ```c
@@ -120,7 +120,7 @@ return 0;
 - A instrução `return` em C é usada para encerrar a execução de uma função e retornar um valor para o ponto onde a função foi chamada.
 - No caso da função `main`, o comando `return 0;` indica que o programa terminou com sucesso.
 
-<h3 align="center">Variáveis em C:</h3>
+<h3 align="center">Variáveis em C</h3>
 
 Uma variável é um **espaço nomeado na memória** do computador usado para **armazenar dados** que podem ser usados durante a execução do programa.
 
@@ -172,7 +172,7 @@ idade = 18;
 ```
 Primeiro a variável é criada, depois recebe o valor.
 
-<h3 align="center">Entradas de dados em C:</h3>
+<h3 align="center">Entradas de dados em C</h3>
 
 **Entradas de dados** em C são os valores fornecidos pelo usuário durante a execução do programa, normalmente **digitados pelo teclado**. Esses dados são **armazenados em variáveis** para serem usados no programa.
 
@@ -196,3 +196,57 @@ Estrutura básica para imprimir a mensagem: `Você tem _ anos.` no qual `_` ser�
 scanf("%d", &idade);
 ```
 A função `scanf()`, pertencente à biblioteca `stdio.h`, lê um dado fornecido pelo usuário por meio da **entrada padrão** (*normalmente, o teclado*).
+
+<h3 align="center">Operações aritméticas em C</h3>
+
+A linguagem C permite a execução de **operações matemáticas** que manipulam e processam **valores numéricos com precisão**.
+
+**Operações em C:**
+
+| Operação        | Símbolo | Exemplo | Resultado |
+| --------------- | ------- | ------- | --------- |
+| Adição          | `+`     | `5 + 3` | `8`       |
+| Subtração       | `-`     | `5 - 3` | `2`       |
+| Multiplicação   | `*`     | `5 * 3` | `15`      |
+| Divisão inteira | `/`     | `5 / 2` | `2`       |
+| Módulo (resto)  | `%`     | `5 % 2` | `1`       |
+
+> [!IMPORTANT]
+> Quando você escreve uma expressão com vários operadores, a linguagem segue uma ordem de prioridade para decidir qual operação será feita primeiro, assim como na matemática.
+```c
+int conta1 = 5 + 2 * 3; // 11
+int conta2 = ( 5 + 2 ) * 3; // 21
+```
+- Variável `conta1`: `2 * 3 = 6` ⮕ `6 + 5 = 11`.
+
+- Variável `conta2`: `5 + 2 = 7` ⮕ `7 * 3 = 21`.
+
+**Tabela prioridade:**
+
+| Prioridade | Operadores    | Descrição                              |
+| ---------- | ------------- | -------------------------------------- |
+| **1**      | `()`          | Parênteses: forçam a ordem da operação |
+| **2**      | `*`, `/`, `%` | Multiplicação, Divisão, Módulo         |
+| **3**      | `+`, `-`      | Soma e Subtração                       |
+
+**operadores de atribuição:**
+
+Esses operadores são atalhos para fazer uma operação aritmética e já armazenar o resultado na própria variável.
+
+```c
+int a = 5;
+a += 5; // 10
+```
+- `a += 5;` é o mesmo que: `a = a += 5;`
+
+**Tabela dos operadores de atribuição:**
+
+| Operador | Significado                       | Exemplo                |
+| -------- | --------------------------------- | ---------------------- |
+| `+=`     | Soma e atribui                    | `a += 3;`              |
+| `-=`     | Subtrai e atribui                 | `a -= 2;`              | 
+| `*=`     | Multiplica e atribui              | `a *= 4;`              |
+| `/=`     | Divide e atribui                  | `a /= 2;`              |  
+| `%=`     | Módulo (resto) e atribui          | `a %= 3;`              | 
+
+
