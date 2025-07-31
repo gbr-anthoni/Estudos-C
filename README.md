@@ -27,7 +27,7 @@ int main() {
 A linguagem C evoluiu a partir das linguagens **BCPL** e **B**.**BCPL**, criada em **1967 por Martin Richards**,
 foi projetada para desenvolver sistemas operacionais e compiladores.A linguagem B, desenvolvida por **Ken Thompson
 em 1970**, baseou-se em BCPL e foi usada nas primeiras versões do UNIX.Ambas eram linguagens "*sem tipo*", nas quais
-todos os dados ocupavam uma palavra na memória , e era bastante trabalhoso tratar um dado como número inteiro ou real.
+todos os dados ocupavam uma "*palavra*" na memória , e era bastante trabalhoso tratar um dado como número inteiro ou real.
 
 Já em **1972 A linguagem C foi criada por Dennis Ritchie** no Bell Laboratories, baseada na linguagem B.Ela **incorporou
 conceitos de BCPL e B**, adicionando **tipos de dados** e outros recursos poderosos.C ficou conhecida como a linguagem
@@ -76,7 +76,7 @@ que ilustram suas principais **características**, acompanhados de análises par
 **`Hello, World!` em C:**
 ```c
 #include <stdio.h>
-int main() {
+int main(void) {
    printf("Hello, World!\n");
    return 0;
 }
@@ -92,11 +92,12 @@ Estrutura básica para imprimir a mensagem: `Hello, World!` na tela.
 - A diretiva `#include <stdio.h>` instrui o pré-processador a incluir o **conteúdo do cabeçalho de entrada/saída padrão** no programa. Esse cabeçalho contém informações necessárias para o uso de **funções** como `printf()` e `scanf()` da biblioteca padrão.
 
 ```c
-int main() { ... }
+int main(void) { ... }
 ```
 - `main` é uma **função**, ou seja, um **bloco de construção** de programa.
   - Todo programa em C começa sua **execução pela função** `main`.
 - A **palavra-chave** `int` à esquerda de `main` indica que essa função retorna um **valor inteiro**.
+- A **palavra-chave** `void` indica que a função não recebe nenhum argumento.
 - As chaves `{ ... }` delimitam o **corpo da função:**
   - `{` marca o início do bloco de código.
   - `}` indica o fim do bloco.
@@ -106,7 +107,7 @@ int main() { ... }
 printf("Hello, World!\n");
 ```
 - A função `printf()` instrui o computador a **imprimir uma mensagem na tela.**
-- A linha completa — `printf("Hello, World!\n");` — é chamada de uma **instrução** (*ou comando*0).
+- A linha completa — `printf("Hello, World!\n");` — é chamada de uma **instrução** (*ou comando*).
 - Toda instrução em C deve terminar com um ponto e vírgula `;`, que é chamado de **terminador de instrução**.
 
 A barra invertida `\` é chamada de **caractere de escape**. Ela indica que a função printf deve executar uma **ação especial**, diferente de imprimir um caractere comum.
@@ -118,3 +119,80 @@ return 0;
 ```
 - A instrução `return` em C é usada para encerrar a execução de uma função e retornar um valor para o ponto onde a função foi chamada.
 - No caso da função `main`, o comando `return 0;` indica que o programa terminou com sucesso.
+
+<h3 align="center">Variáveis em C:</h3>
+
+Uma variável é um **espaço nomeado na memória** do computador usado para **armazenar dados** que podem ser usados durante a execução do programa.
+
+**Estrutura de variáveis C:**
+Uma variável precisa ser **declarada antes de ser usada**. A declaração especifica o **tipo** e o **nome** da variável.
+```c
+[tipo] [nome];
+```
+**Tipos de variáveis C:**
+| Tipo         | Descrição                          | Valor guardado                                             | Especificador |
+| ------------ | ---------------------------------- | ---------------------------------------------------------- | --------------|
+| `int`        | Número Inteiro                     | `0`, `3456`, `-23`                                         | `%d` e `%i`   |
+| `float`      | Número decimal (menos preciso)     | `3.14`, `0.45`, `-4.5`                                     | `%f`          |
+| `double`     | Número decimal (mais preciso)      | `3.1415`, `-0.00001`, `42.0`                               | `%lf`         |
+| `char`       | Um caractere (entre aspas simples) | `'a'`, `'Z'`, `'1'`, `'#'`                                 | `%c`          |
+
+**Nomes de variáveis C:**
+
+Um nome de variável é como você chama uma variável no seu programa. Ele deve seguir algumas regras e boas práticas.
+
+1. **Podem conter:**
+  - Letras minúsculas (a-z)
+  - Letras maiúsculas (A-Z)
+  - Dígitos (0-9)
+  - Underscore (_)
+2. **Não podem começar com um número:**
+  - ✅ `numero1`
+  - ❌ `1numero` (*inválido*)
+3. **Não podem conter espaços ou símbolos especiais:**
+  - ✅ `nota_final`,`salario`,`nome`
+  - ❌ `nota final`,`salário$`,`@nome` (*inválidos*)
+4. **Não podem ser palavras reservadas da linguagem C:**
+  - ❌ `int`, `return`, `while`, `if`, etc... (*inválidos*)
+
+**Atribuir dado a variável em C:**
+
+A atribuição em C é o processo de dar um valor a uma variável usando o operador de atribuição `=`.
+
+**atribuição direta:**
+```c
+int idade = 18;
+```
+Aqui, a variável idade é declarada e recebe o valor 18 no mesmo momento.
+
+**atribuição separada:**
+```c
+int idade;
+idade = 18;
+```
+Primeiro a variável é criada, depois recebe o valor.
+
+<h3 align="center">Entradas de dados em C:</h3>
+
+**Entradas de dados** em C são os valores fornecidos pelo usuário durante a execução do programa, normalmente **digitados pelo teclado**. Esses dados são **armazenados em variáveis** para serem usados no programa.
+
+**Exemplo simples:**
+
+```c
+#include <stdio.h>
+int main(void) {
+   int idade;
+
+   printf("Digite sua idade: ");
+   scanf("%d", &idade);
+
+   printf("Você tem %d anos.\n", idade);
+   return 0;
+}
+```
+Estrutura básica para imprimir a mensagem: `Você tem _ anos.` no qual `_` será o valor colocado pelo usuário na variável `idade`.
+
+```c
+scanf("%d", &idade);
+```
+A função `scanf()`, pertencente à biblioteca `stdio.h`, lê um dado fornecido pelo usuário por meio da **entrada padrão** (*normalmente, o teclado*).
