@@ -387,11 +387,11 @@ São comandos que permitem ao programa verificar se uma condição é **verdadei
 
 ```c
 if ( condição ) {
-   // bloco de execução
+   // bloco de código
 } else if ( outra condição ) {
-   // bloco de execução
+   // bloco de código
 } else {
-   // bloco de execução
+   // bloco de código
 }
 ```
 
@@ -403,6 +403,28 @@ if ( condição ) {
 
 As **estruturas de repetição** em C são usadas quando você precisa executar um **bloco de código várias vezes**, de forma **controlada** ou até que uma **condição seja satisfeita**.
 
-repetição controlada
-por contador
+```c
+while (condição) {
+    // bloco de código
+}
+```
+`while` exeulta um bloco de código até a condição dele seja **falsa**.
+
+> [!WARNING]
+>  Cuidado para não criar um **loop infinito!** ( *Garanta que a condição do while possa se tornar falsa* ).
+
+```c
+do {
+    // bloco de código
+} while (condição);
+```
+
+`do...while` é uma **estrutura de repetição** parecida com o `while`, mas com uma **diferença importante:** O bloco de código é executado pelo menos uma vez, mesmo que a condição seja **falsa** logo no início.
+
+**Diferença entre `while` e `do...while`:**
+
+| Característica        | `while`                         | `do...while`                      |
+| --------------------- | ------------------------------- | --------------------------------- |
+| Avaliação da condição | **Antes** de executar o bloco   | **Depois** de executar o bloco    |
+| Execução garantida?   | Só se a condição for verdadeira | Sempre **executa ao menos 1 vez** |
 
