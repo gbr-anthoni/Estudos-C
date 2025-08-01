@@ -88,6 +88,12 @@ int main(void) {
    return 0;
 }
 ```
+
+**Saída:**
+```
+Hello, World!
+```
+
 Estrutura básica para imprimir a mensagem: `Hello, World!` na tela.
 
 **passo a passo:**
@@ -405,7 +411,7 @@ As **estruturas de repetição** em C são usadas quando você precisa executar 
 
 ```c
 while (condição) {
-    // bloco de código
+    // Bloco de código
 }
 ```
 `while` exeulta um bloco de código até a condição dele seja **falsa**.
@@ -415,7 +421,7 @@ while (condição) {
 
 ```c
 do {
-    // bloco de código
+    // Bloco de código
 } while (condição);
 ```
 
@@ -427,4 +433,89 @@ do {
 | --------------------- | ------------------------------- | --------------------------------- |
 | Avaliação da condição | **Antes** de executar o bloco   | **Depois** de executar o bloco    |
 | Execução garantida?   | Só se a condição for verdadeira | Sempre **executa ao menos 1 vez** |
+
+```c
+for (inicialização; condição; incremento) {
+    // Bloco de código
+}
+```
+
+A função `for` é usada para executar um bloco de **código várias vezes**, geralmente quando se **sabe quantas vezes o código deve ser repetido**.
+
+- `iniciaçização` ⮕ É feita quando uma **variável de controle** (um "*contador*") é declarada e inicializada com algum valor.
+- `condição` ⮕ É a **condição lógica** que será verificada antes de cada repetição. Se for **verdadeira**, o loop continua; se for **falsa**, o loop termina.
+- `incremento` ⮕  É a **modificação da variável de controle** após cada repetição.Normalmente, serve para aproximar a condição de ser **falsa**, encerrando o loop.
+
+**Comandos `break` e `continue`:**
+
+- O `break` serve para encerrar um loop, para sair dele mesmo que a condição seja verdadeira.
+```c
+#include <stdio.h>
+int main(){
+   int i = 5;
+   while( i > 0 ){
+      printf("i = %d\n",i);
+      i--;
+      if ( i == 2 ){
+         break;
+      }
+   }
+   return 0;
+}
+```
+
+**Saída:**
+```
+i = 5
+i = 4
+i = 3
+```
+
+Mesmo que a condição do `while` (`i > 0`) ainda seja **verdadeira**, o `break` força a saída imediata do laço.
+
+**Tabela de execução:**
+| Repetição     | Valor de `i` (antes do `printf`) | Valor de `i` após `i--` | `i == 2`?   | Condição `i > 0` na próxima iteração |
+| --------------| -------------------------------- | ----------------------- | ----------- | ------------------------------------ |
+| **1**         | 5                                | 4                       | `0` *False* | Sim                                  |
+| **2**         | 4                                | 3                       | `0` *False* | Sim                                  |
+| **3**         | 3                                | 2                       | `1` *True*  | Não (*break*)                        |
+
+
+- O `continue` pula o restante do corpo do laço atual e vai **direto para a próxima iteração**, sem **sair do laço**.
+
+```c
+#include <stdio.h>
+int main(){
+   int i = 5;
+   while( i > 0 ){
+      i--;
+      if ( i == 2 ){
+         continue;
+      }
+      printf("i = %d\n",i);
+   }
+   return 0;
+}
+```
+
+**Saída:**
+```
+i = 4
+i = 3
+i = 1
+i = 0
+```
+
+O `continue` pula para a **próxima iteração**, por isso o valor `2` não é exibido.
+
+
+**Tabela de execução:**
+| Repetição | `i` antes do `i--` | `i` após `i--` | `i == 2`?   | `printf` é executado? | Condição `i > 0` na próxima iteração |
+| --------- | ------------------ | -------------- | ----------- | --------------------- | ------------------------------------ |
+| **1**     | 5                  | 4              | `0` *false* | Sim (`i = 4`)         | Sim                                  |
+| **2**     | 4                  | 3              | `0` *false* | Sim (`i = 3`)         | Sim                                  |
+| **3**     | 3                  | 2              | `1` *True*  | Não (*pulado*)        | Sim                                  |
+| **4**     | 2                  | 1              | `0` *false* | Sim (`i = 1`)         | Sim                                  |
+| **5**     | 1                  | 0              | `0` *false* | Sim (`i = 0`)         | Não (*laço termina*)                 |
+
 
