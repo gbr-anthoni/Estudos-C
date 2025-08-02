@@ -510,12 +510,62 @@ O `continue` pula para a **próxima iteração**, por isso o valor `2` não é e
 
 
 **Tabela de execução:**
-| Repetição | `i` antes do `i--` | `i` após `i--` | `i == 2`?     | `printf` é executado? | Condição `i > 0` na próxima iteração |
-| --------- | ------------------ | -------------- | ------------- | --------------------- | ------------------------------------ |
-| **1**     | 5                  | 4              | `0`   *false* | Sim (`i = 4`)         | Sim                                  |
-| **2**     | 4                  | 3              | `0`   *false* | Sim (`i = 3`)         | Sim                                  |
-| **3**     | 3                  | 2              | `1`   *True*  | Não (*pulado*)        | Sim                                  |
-| **4**     | 2                  | 1              | `0`   *false* | Sim (`i = 1`)         | Sim                                  |
-| **5**     | 1                  | 0              | `0`   *false* | Sim (`i = 0`)         | Não (*laço termina*)                 |
+| Repetição | `i` antes do `i--` | `i` após `i--` | `i == 2`?   | `printf` é executado? | Condição `i > 0` na próxima iteração |
+| --------- | ------------------ | -------------- | ----------- | --------------------- | ------------------------------------ |
+| **1**     | 5                  | 4              | `0` *false* | Sim (`i = 4`)         | Sim                                  |
+| **2**     | 4                  | 3              | `0` *false* | Sim (`i = 3`)         | Sim                                  |
+| **3**     | 3                  | 2              | `1` *True*  | Não (*pulado*)        | Sim                                  |
+| **4**     | 2                  | 1              | `0` *false* | Sim (`i = 1`)         | Sim                                  |
+| **5**     | 1                  | 0              | `0` *false* | Sim (`i = 0`)         | Não (*laço termina*)                 |
 
+<h3 align="center">Pré-processador em C</h3>
+
+O **pré-processador** é uma parte do compilador C que **executa tarefas no código-fonte antes da compilação começar**. Ele é responsável por preparar o código, **processando diretivas especiais que começam com o caractere** `#`.
+
+**`#include` – Inclusão de arquivos**
+
+```c
+#include <arquivo>
+#include "arquivo"
+```
+- `<arquivo>`: O compilador procura o arquivo nas **pastas padrão do sistema** (*diretórios de bibliotecas do compilador*).
+- `"arquivo"`: Usado para incluir **arquivos criados por você**, geralmente no **mesmo diretório do projeto**.
+
+**`#define` – Definição de constantes e macros**
+
+```c
+#define PI 3.1415
+float valor = PI;
+```
+- O pré-processador **substitui** `PI` por `3.1415` **antes de compilar**.
+
+**`#undef` – Desfaz uma definição**
+
+```c
+#undef PI
+```
+- Se você quiser "*apagar*" a definição anterior de `PI`.
+
+**`#if`,`#elif`,`#else` — Condições com valores lógicos / `#endif` — Finaliza um bloco condicional**
+
+```c
+#define VERSAO 3
+
+#if   VERSAO == 1
+    // Versão
+#elif VERSAO == 2
+    // Versão
+#else
+    // Outra versão
+#endif
+```
+- `#if`
+  - Verifica se `VERSAO` é **igual** a `1`.
+- `#elif`
+  - Verifica se `VERSAO` é **igual** a `2`.
+  - Só será testado se o `#if` acima for **falso**.
+- `#else`
+  - Executado se **nenhuma condição acima foi verdadeira**.
+- `#endif`
+  - **Fecha o bloco condicional** iniciado com `#if`.
 
