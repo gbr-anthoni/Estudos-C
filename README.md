@@ -510,12 +510,12 @@ O `continue` pula para a **próxima iteração**, por isso o valor `2` não é e
 
 
 **Tabela de execução:**
-| Repetição | `i` antes do `i--` | `i` após `i--` | `i == 2`?   | `printf` é executado? | Condição `i > 0` na próxima iteração |
-| --------- | ------------------ | -------------- | ----------- | --------------------- | ------------------------------------ |
-| **1**     | 5                  | 4              | `0` *false* | Sim (`i = 4`)         | Sim                                  |
-| **2**     | 4                  | 3              | `0` *false* | Sim (`i = 3`)         | Sim                                  |
-| **3**     | 3                  | 2              | `1` *True*  | Não (*pulado*)        | Sim                                  |
-| **4**     | 2                  | 1              | `0` *false* | Sim (`i = 1`)         | Sim                                  |
-| **5**     | 1                  | 0              | `0` *false* | Sim (`i = 0`)         | Não (*laço termina*)                 |
+| Repetição | `i` antes do `i--` | `i` após `i--` | `i == 2`?     | `printf` é executado? | Condição `i > 0` na próxima iteração |
+| --------- | ------------------ | -------------- | ------------- | --------------------- | ------------------------------------ |
+| **1**     | 5                  | 4              | `0`   *false* | Sim (`i = 4`)         | Sim                                  |
+| **2**     | 4                  | 3              | `0`   *false* | Sim (`i = 3`)         | Sim                                  |
+| **3**     | 3                  | 2              | `1`   *True*  | Não (*pulado*)        | Sim                                  |
+| **4**     | 2                  | 1              | `0`   *false* | Sim (`i = 1`)         | Sim                                  |
+| **5**     | 1                  | 0              | `0`   *false* | Sim (`i = 0`)         | Não (*laço termina*)                 |
 
 
